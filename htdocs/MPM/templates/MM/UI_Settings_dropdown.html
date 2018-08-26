@@ -1,0 +1,90 @@
+<form method="POST" id='label_settings_form' action="/UIInclude">
+	<div id="DropDown_options" class="panel-group">
+    <div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#DropDown_options" href="#DropDown_PropertyPanel">DropDown Panel</a>
+
+		</h4>
+	</div>
+
+	<div id="DropDown_PropertyPanel" class="panel-collapse collapse">
+		<input name="id" value={{id}} hidden/>
+		<!--<input name="response" value={{response}} hidden/>-->
+        <input name="UIElement" value={{UIElement}} hidden/>
+	    <label >Function Name: <input type="text" name='DropDown_property_value' data-type="Value" value="{{DropDown_property_value}}"></label>
+	</div>
+	</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#DropDown_options" href="#DropDown_ColumnPanel">Column Panel</a>
+			</h4>
+			</div>
+			<div id="DropDown_ColumnPanel" class="panel-collapse collapse">
+	    <label >Class: <input type="text" name='column_class' data-type="Class" value="{{column_class}}"></label><br>
+		<label >Style: <input type="text" name='column_style' data-type="Style" value="{{column_style}}"></label><br>
+	</div>
+		</div>
+
+
+</div>
+
+	<div class="container-fluid ui-tabs ui-corner-all ui-widget ui-widget-content"  data-select="Tablayout" id="Tablayout_2qn7bomm7">
+    <div class="row" data-layout="row" id="row_t6l6wz168">
+     <div class="col-md-12">
+      <div class="ui-tabs ui-corner-all ui-widget ui-widget-content" id="TabContainer_bz6a5ctiw">
+       <ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header ui-sortable" data-tabid="TabContainer_bz6a5ctiw" role="tablist">
+        <li aria-controls="Tab_leg4pjksm" aria-expanded="true" aria-labelledby="ui-id-6" aria-selected="true" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" role="tab" tabindex="0">
+         <a class="ui-tabs-anchor" href="#Tab_leg4pjksm" id="ui-id-6" role="presentation" tabindex="-1">
+          DropDown
+         </a>
+        </li>
+        <li aria-controls="Tab_a3qa75wbs" aria-expanded="false" aria-labelledby="ui-id-7" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1">
+         <a class="ui-tabs-anchor" href="#Tab_a3qa75wbs" id="ui-id-7" role="presentation" tabindex="-1">
+          Column
+         </a>
+        </li>
+        <li aria-controls="Tab_ejysfqfof" aria-expanded="false" aria-labelledby="ui-id-8" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1">
+         <a class="ui-tabs-anchor" href="#Tab_ejysfqfof" id="ui-id-8" role="presentation" tabindex="-1">
+          Sample
+         </a>
+        </li>
+       </ul>
+       <div aria-hidden="false" aria-labelledby="ui-id-6" class="ui-tabs-panel ui-corner-bottom ui-widget-content"  data-select="Tablayout" id="Tab_leg4pjksm" role="tabpanel" style="">
+        <div class="col-md-6" style="">
+			<input name="id" value={{id}} hidden/>
+			<!--<input name="response" value={{response}} hidden/>-->
+			<input name="UIElement" value={{UIElement}} hidden/>
+			<label >Function Name: <input type="text" name='DropDown_property_value' data-type="Value" value="{{DropDown_property_value}}"></label>
+        </div>
+
+       </div>
+       <div aria-hidden="true" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-corner-bottom ui-widget-content"  data-select="Tablayout" id="Tab_a3qa75wbs"  role="tabpanel" style="">
+        <div class="col-md-6" style="">
+			<label >Class: <input type="text" name='column_class' data-type="Class" value="{{column_class}}"></label>
+			<label >Style: <input type="text" name='column_style' data-type="Style" value="{{column_style}}"></label>
+        </div>
+
+       </div>
+       <div aria-hidden="true" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-corner-bottom ui-widget-content"  data-select="Tablayout" id="Tab_ejysfqfof" role="tabpanel" style="">
+        <div class="col-md-6" style="">
+         <label class="" style="">
+          Hello
+         </label>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+	<input type="submit" value="Save" class="btn btn-primary">
+	<script>$('div[id^="TabContainer_"]').tabs();</script>
+
+    {% include "MM/Element_Dropdown_Settings.html"%}
+
+
+</form>
+
+
+

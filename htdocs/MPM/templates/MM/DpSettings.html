@@ -1,0 +1,36 @@
+<html>
+ <body>
+  <form action="/UIInclude" id="DpSettings" method="POST">
+   <input name="id" type="hidden" value="{{id}}"/>
+   <input name="UIElement" type="hidden" value="{{UIElement}}"/>
+   <div>
+    {% include "MM/Element_Dropdown_Settings.html" %}
+   </div>
+  </form>
+ </body>
+</html>
+<script>
+ $(document).on('submit','#DpSettings',function(e){
+    e.preventDefault();
+$.ajax({ data: $(this).serialize(),
+type: $(this).attr('method'),
+url: $(this).attr('action'),
+success: function(response) {
+var controlData = JSON.parse(response.responseData.response);
+console.log(controlData);
+$('#DpSettings').html(response.html);
+//console.log(response.responseData.controlType);
+$('#'+controlData.id).attr('data-controlset',response.responseData.response);
+$('#'+controlData.id).attr('class',controlData.column_class);
+$('#'+controlData.id).attr('style',controlData.column_style);
+if(response['success']) {
+}
+if(response['error']) {
+}
+},
+error: function (request, status, error) {
+console.log(request.responseText);
+}
+});
+});
+</script>

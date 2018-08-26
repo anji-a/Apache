@@ -1,0 +1,26 @@
+<form method="POST" id='work_form' action="/standardFunc" class="h100">
+  {% include "MM/UIOptions.html" %}
+  <input name="element_name" value="{{element_name}}" hidden/>
+  <input name="element_type" value="{{element_type}}" hidden/>
+<!--<input name="fun_name" value="UISave" hidden/>-->
+<!--<div>
+  <ul class="nav">
+    <li class="nav-item"><a class="glyphicon glyphicon-trash"></a></li>
+  </ul>
+</div>-->
+  <div class="Dtab body h90 bgColorstandard" id={{element_name}}>
+    <fieldset class="fldset h100" id='TopFieldSetID' data-edit="merge">
+    <legend class="fldset" data-edit="remove"> Dragable Area</legend>
+      <div class="dragSpace h97 bgColorstandard"
+         ondrop="drop(event)" ondragover="allowDrop(event)"
+         ondragleave=""
+         ondragstart=""
+         ondragend=""
+         id="MainDragLayout" data-edit="merge">
+
+      </div>
+
+    </fieldset>
+
+  </div>
+</form>

@@ -1,0 +1,75 @@
+<html>
+ <head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="static/css/Portal.css" rel="stylesheet"/>
+  <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+  </script>
+  <script src="static/js/tabs.js">
+  </script>
+  <script src="static/js/app.js">
+  </script>
+  <script src="static/js/Portal.js">
+  </script>
+ </head>
+ <body>
+  <div class="Dtab body h90 bgColorstandard" id="Element_Dropdown_Settings">
+   <div class="container-fluid ui-tabs ui-corner-all ui-widget ui-widget-content" data-controlset='{"controlType":"Tablayout","layout_style":"","layout_class":"container-fluid"}' data-edit="regenerate" data-select="Tablayout" id="Tablayout_4epzh1e2g">
+    <div class="row" data-layout="row" id="row_m3bws4oue">
+     <div class="col-md-12">
+      <div class="ui-tabs ui-corner-all ui-widget ui-widget-content" id="TabContainer_i88w69n6x">
+       <ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header ui-sortable" data-tabid="TabContainer_i88w69n6x" role="tablist">
+        <li aria-controls="Tab_rsqgypdgb" aria-expanded="false" aria-labelledby="ui-id-6" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-sortable-handle" role="tab" tabindex="-1">
+         <a class="ui-tabs-anchor" href="#Tab_rsqgypdgb" id="ui-id-6" role="presentation" tabindex="-1">
+          Drop Down
+         </a>
+        </li>
+        <li aria-controls="Tab_51br23f16" aria-expanded="true" aria-labelledby="ui-id-7" aria-selected="true" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" role="tab" tabindex="0">
+         <a class="ui-tabs-anchor" href="#Tab_51br23f16" id="ui-id-7" role="presentation" tabindex="-1">
+          Column
+         </a>
+        </li>
+       </ul>
+       <div aria-hidden="true" aria-labelledby="ui-id-6" class="ui-tabs-panel ui-corner-bottom ui-widget-content" data-controlset='{"controlType": "Tab", "Tab_style": "", "Tab_class": "", "UIElement": "MM/UI_Settings_Tab.html", "id": "Tab_rsqgypdgb", "tab_class": "ui-tabs-panel ui-corner-bottom ui-widget-content", "tab_style": "height: 60px; display: flow-root; border: 2px solid blue;", "tab_name": "Drop Down"}' data-select="Tablayout" id="Tab_rsqgypdgb" onclick="enableTabborder(event)" role="tabpanel" style="height: 60px; display: none;">
+        <div class="col-md-6" style="">
+         <label class="" for="DropDown_property_value" style="">
+          {{ "Function Name:" }}
+          <input class="" name="DropDown_property_value" style="" value="{{DropDown_property_value}}"/>
+         </label>
+        </div>
+        <p>
+         &nbsp;&nbsp;
+        </p>
+       </div>
+       <div aria-hidden="false" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-corner-bottom ui-widget-content" data-controlset='{"controlType": "Tab", "Tab_style": "", "Tab_class": "", "UIElement": "MM/UI_Settings_Tab.html", "id": "Tab_51br23f16", "tab_class": "ui-tabs-panel ui-corner-bottom ui-widget-content", "tab_style": "height: 60px; display: flow-root; border: 2px solid blue;", "tab_name": "Column"}' data-select="Tablayout" id="Tab_51br23f16" onclick="enableTabborder(event)" role="tabpanel" style="height: 60px; display: block;">
+        <div class="col-md-6" style="">
+         <label class="" for="column_class" style="">
+          {{ "Class :" }}
+          <input class="" name="column_class" style="" value="{{column_class}}"/>
+         </label>
+        </div>
+        <div class="col-md-6" style="">
+         <label class="" for="column_style" style="">
+          {{ "Style :" }}
+          <input class="" name="column_style" style="" value="{{column_style}}"/>
+         </label>
+        </div>
+        <p>
+         &nbsp;&nbsp;
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script>
+    $('div[id^='TabContainer_']').tabs();
+   </script>
+   <div id="divHighlight" style="">
+    <!-- Add content to the popup -->
+   </div>
+  </div>
+ </body>
+</html>

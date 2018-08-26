@@ -1,0 +1,50 @@
+{% load define %}
+{%load TagutilityWOcontext %}
+<!--{% with key as ida %}
+ {% define choices as action %}
+
+    <select name={{action}}>
+    {% for choice in choices %}
+        <option>{{ choice }}</option>
+    {% endfor %}
+    </select>
+  {% endwith %}
+
+{% with "key" as ida %}
+<ul>
+{% for a, b in choices.items %}
+  <li>{{ a }} - {{ b.key }} - {% TagutilityWOcontext fun_name='getDynamicPropertyValues' property_name=ida Tagdata=b %}</li>
+ {% endfor %}
+</ul>
+{% endwith %}
+-->
+  <style>
+    fieldset {
+      border: 0;
+    }
+    label {
+      display: block;
+      margin: 30px 0 0 0;
+    }
+    .overflow {
+      height: 200px;
+    }
+  </style>
+<fieldset>
+<label for="number">Select a number</label>
+{% with  key_value=key val_value=value  %}
+    <select name={{key_value}} id="number">
+    {% for key, value in choices.items %}
+        <option value={% TagutilityWOcontext fun_name='getDynamicPropertyValues' property_name=key_value Tagdata=value %}>{% TagutilityWOcontext fun_name='getDynamicPropertyValues' property_name=val_value Tagdata=value %}</option>
+    {% endfor %}
+    </select>
+{% endwith %}
+</fieldset>
+
+<script>
+  $( function() {
+    $( "#number" ).selectmenu();
+
+
+  } );
+  </script>

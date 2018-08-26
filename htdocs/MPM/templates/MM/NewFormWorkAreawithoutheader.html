@@ -1,0 +1,39 @@
+  <input name="element_name" value="{{element_name}}" hidden/>
+  <input name="element_type" value="{{element_type}}" hidden/>
+<!--<input name="fun_name" value="UISave" hidden/>-->
+<!--<div>
+  <ul class="nav">
+    <li class="nav-item"><a class="glyphicon glyphicon-trash"></a></li>
+  </ul>
+</div>-->
+  <div class="Dtab body h90 bgColorstandard" id={{element_name}}>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="action">Action</label>
+          <input type="input" class="form-control" id="action" name='action' placeholder="Action" value="{{action}}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="method">Method</label>
+          <input type="input" class="form-control" id="method" name='method' placeholder="POST" value="{{method}}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="includeElement">Enter UI Element</label>
+          <input type="input" class="form-control" id="includeElement" name='includeElement' placeholder="Enter UI Element" value="{{includeElement}}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label>Add Hidden Properties</label>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="form-row">
+                    {% for key,value in hideEle.items %}
+                        <div class="form-group col-md-12"><input type="input" class="form-control" id={{key}} name={{key}} placeholder="Property Name" value={{value}}></div>
+                    {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-primary mb-2" onclick="addPropertyrow(event)">Add Property</button>
+        </div>
+    </div>
+  </div>

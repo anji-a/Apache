@@ -1,0 +1,85 @@
+<form method="POST" id='work_form' action="/standardFunc" class="h100">
+{% include "MM/UIOptions.html" %}
+<input name="element_name" value={{element_name}} hidden/>
+<input name="element_type" value="{{element_type}}" hidden/>
+<!--<input name="fun_name" value="UISave" hidden/>-->
+<!--<div>
+  <ul class="nav">
+    <li class="nav-item"><a class="glyphicon glyphicon-trash"></a></li>
+  </ul>
+</div>-->
+<div class="Dtab body h90 bgColorstandard" id={{element_name}}>
+    <div class="container-fluid h100 paddingZero" data-controlset="{&quot;controlType&quot;:&quot;Tablayout&quot;,&quot;layout_style&quot;:&quot;&quot;,&quot;layout_class&quot;:&quot;container-fluid&quot;}" data-edit="regenerate" data-select="Tablayout" id="Tablayout_tr3w2bxkn">
+    <div class="row h100" data-layout="row" id="row_xwpk7qhta">
+     <div class="col-md-12 h100">
+      <div class="ui-tabs ui-corner-all ui-widget ui-widget-content h100" id="TabContainer_yi3nre40h">
+       <ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header ui-sortable" data-tabid="TabContainer_yi3nre40h" role="tablist">
+        <li aria-controls="Tab_jm4frmx0w" aria-expanded="true" aria-labelledby="ui-id-7" aria-selected="true" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active ui-sortable-handle" role="tab" tabindex="0">
+         <a class="ui-tabs-anchor" href="#Tab_jm4frmx0w" id="ui-id-7" role="presentation" tabindex="-1">
+          Tag Code
+         </a>
+        </li>
+        <li aria-controls="Tab_jyibbnxvq" aria-expanded="false" aria-labelledby="ui-id-8" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1">
+         <a class="ui-tabs-anchor" href="#Tab_jyibbnxvq" id="ui-id-8" role="presentation" tabindex="-1">
+          Tag HTML
+         </a>
+        </li>
+       </ul>
+       <div aria-hidden="false" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-corner-bottom ui-widget-content h90" data-controlset="{&quot;controlType&quot;:&quot;Tab&quot;,&quot;Tab_style&quot;:&quot;&quot;,&quot;Tab_class&quot;:&quot;&quot;}" data-select="Tablayout" id="Tab_jm4frmx0w" role="tabpanel" >
+        <div id='{{ element_name }}_pyEditor' class="editor" >
+
+        </div>
+        <input  name='{{ element_name }}_py'  type="hidden" style="display:none;"/>
+       </div>
+       <div aria-hidden="true" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-corner-bottom ui-widget-content h90" data-controlset="{&quot;controlType&quot;:&quot;Tab&quot;,&quot;Tab_style&quot;:&quot;&quot;,&quot;Tab_class&quot;:&quot;&quot;}" data-select="Tablayout" id="Tab_jyibbnxvq" role="tabpanel" >
+         <div id='{{ element_name }}_htmlEditor' class="editor">
+
+        </div>
+        <input  name='{{ element_name }}_html'  type="hidden" style="display:none;" />
+       </div>
+      </div>
+     </div>
+    </div>
+
+   </div>
+
+<div id="divHighlight" style="">
+
+</div>
+    <script>
+$('div[id^="TabContainer_"]').tabs();
+var tabpythonid="{{ element_name }}_pyEditor";
+/*var pyeditor = new AceEditor(
+      {
+        boundingBox: '#'+tabpythonid,
+        height: '200',
+        value: 'alert("Write something here...");',
+        width: '700'
+      }
+    ).render();*/
+var pyeditor = ace.edit(tabpythonid);
+pyeditor.setValue($('input[name={{ element_name }}_py]:hidden').val());
+pyeditor.setTheme("ace/theme/monokai");
+pyeditor.getSession().setMode("ace/mode/python");
+pyeditor.session.on('change', function(delta) {
+    // delta.start, delta.end, delta.lines, delta.action
+    //console.log(pyeditor.getValue());
+    $('input[name={{ element_name }}_py]:hidden').val(pyeditor.getValue());
+});
+
+var tabhtmlthonid="{{ element_name }}_htmlEditor";
+var htmleditor = ace.edit(tabhtmlthonid);
+htmleditor.setValue($('input[name={{ element_name }}_html]:hidden').val());
+htmleditor.setTheme("ace/theme/monokai");
+htmleditor.getSession().setMode("ace/mode/html");
+htmleditor.session.on('change', function(delta) {
+    // delta.start, delta.end, delta.lines, delta.action
+    //console.log(pyeditor.getValue());
+    $('input[name={{ element_name }}_html]:hidden').val(htmleditor.getValue());
+});
+//# sourceURL=pen.js
+</script>
+</div>
+
+
+</form>
